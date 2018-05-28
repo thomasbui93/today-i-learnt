@@ -1,0 +1,18 @@
+.header {
+    &__container {
+        background: $primaryColor;
+        color: $constrastColor;
+    }
+
+    &__menu {
+        height: 60px;
+    }
+
+    &__item {
+        text-transform: uppercase;
+        float: left;
+        line-height: 60px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+}

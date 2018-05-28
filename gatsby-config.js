@@ -1,9 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    title: 'Today I learnt',
+    author: 'Khoa Bui'
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
@@ -40,6 +38,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-feed`,
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        precision: 8
+      }
+    }
   ],
 }

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 // Utilities
 import kebabCase from 'lodash/kebabCase'
 
-// Components
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 
@@ -18,17 +17,19 @@ const TagsPage = ({
 }) => (
   <div>
     <Helmet title={title} />
-    <div>
-      <h1>Tags</h1>
-      <ul>
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue} ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <div className="content__actual is--padded">
+      <h1 className="page-title">Tags</h1>
+      <div className="list__container">
+        {
+          group.map(tag => (
+            <div key={tag.fieldValue} className="list__item">
+              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                {tag.fieldValue} ({tag.totalCount})
+              </Link>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 )

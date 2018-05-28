@@ -9,17 +9,26 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
-      <div>
+      <div className="grid">
         <Helmet title={siteTitle} />
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3>
-                <Link to={node.fields.slug}>{title}</Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+            <div className="card content__actual" key={node.fields.slug}>
+              <div className="card__inner">
+                <h3 className="card__title">
+                  <Link to={node.fields.slug}>{title}</Link>
+                </h3>
+                <div className="card__subtitle">{node.frontmatter.date}</div>
+                <div className="card__content" dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              </div>
+              <div className="card__actions tags">
+                {
+                  node.frontmatter.tags.map(tag => (
+                    <Link to={`/tags/${tag}`} key={tag}>{tag}</Link>
+                  ))
+                }
+              </div>
             </div>
           )
         })}
@@ -47,6 +56,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
+            tags
           }
         }
       }

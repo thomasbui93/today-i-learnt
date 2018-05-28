@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
+import Header from './../components/Header'
+import './../styles/app.scss'
 
 export default ({ children, data }) => (
   <div>
@@ -11,7 +13,8 @@ export default ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <div>{children()}</div>
+    <Header/>
+    <div className="content">{children()}</div>
   </div>
 )
 
