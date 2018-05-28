@@ -18,5 +18,11 @@
         a {
             color: $constrastColor;
         }
+
+        &.is--active {
+            a {
+                color: $primaryColor;
+            }
+        }
     }
 }
