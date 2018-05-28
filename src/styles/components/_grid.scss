@@ -1,0 +1,26 @@
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+$grid-columns: 12;
+
+@for $i from 1 through $grid-columns {
+  .grid-#{$i} {
+    width: percentage($i / $grid-columns);
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+    @for $i from 1 through $grid-columns {
+        .grid-md-#{$i} {
+          width: percentage($i / $grid-columns);
+        }
+    }
+}
+
+[class^='grid-'] {
+  float: left;
+  padding: 1em 0;
+  text-align: center;
+}

@@ -10,11 +10,14 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pathContext
 
     return (
-      <div>
+      <div className="content__actual is--padded">
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-        <h1>{post.frontmatter.title}</h1>
-        <p>{post.frontmatter.date}</p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="page-header no-padding">
+          <h1 className="page-title">{post.frontmatter.title}</h1>
+          <p className="page-subtitle">{post.frontmatter.date}</p>
+        </div>
+        
+        <div className="page-content" dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     )
   }

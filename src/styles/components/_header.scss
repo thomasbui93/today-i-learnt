@@ -1,7 +1,7 @@
 .header {
     &__container {
-        background: $primaryColor;
-        color: $constrastColor;
+        background: white;
+        color: black;
     }
 
     &__menu {
@@ -14,5 +14,9 @@
         line-height: 60px;
         margin-left: 10px;
         cursor: pointer;
+
+        a {
+            color: $constrastColor;
+        }
     }
 }

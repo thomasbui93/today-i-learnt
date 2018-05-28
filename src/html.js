@@ -25,7 +25,7 @@ module.exports = class HTML extends React.Component {
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+          <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet"/>
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"

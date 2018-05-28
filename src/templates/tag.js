@@ -26,20 +26,22 @@ const Tags = ({ pathContext, data }) => {
             const { title } = node.frontmatter
             const { slug } = node.fields
             return (
-              <div className="card content__actual" key={node.fields.slug}>
-                <div className="card__inner">
-                  <h3 className="card__title">
-                    <Link to={node.fields.slug}>{title}</Link>
-                  </h3>
-                  <div className="card__subtitle">{node.frontmatter.date}</div>
-                  <div className="card__content" dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-                </div>
-                <div className="card__actions tags">
-                  {
-                    node.frontmatter.tags.map(tag => (
-                      <Link to={`/tags/${tag}`} key={tag}>{tag}</Link>
-                    ))
-                  }
+              <div className="card__container " key={node.fields.slug}>
+                <div className="card content__actual">
+                  <div className="card__inner">
+                    <h3 className="card__title">
+                      <Link to={node.fields.slug}>{title}</Link>
+                    </h3>
+                    <div className="card__subtitle">{node.frontmatter.date}</div>
+                    <div className="card__content" dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                  </div>
+                  <div className="card__actions tags">
+                    {
+                      node.frontmatter.tags.map(tag => (
+                        <Link to={`/tags/${tag}`} key={tag}>{tag}</Link>
+                      ))
+                    }
+                  </div>
                 </div>
               </div>
             )
