@@ -40,3 +40,9 @@
 .page-content {
     line-height: 20px
 }
+
+@media (min-width: $breakpoint-tablet) {
+    .page-header.lg-margin {
+        margin: 5px
+    }
+}

@@ -15,18 +15,18 @@ const Tags = ({ pathContext, data }) => {
   return (
     <div>
       <Helmet title={`${tag.toUpperCase()} | ${siteTitle}`} />
-      <div className="page-header">
+      <div className="page-header lg-margin">
         <h1 className="page-title">{tagHeader}</h1>
         <Link to="/tags">All tags</Link>
       </div>
       
-      <div>
+      <div className="grid">
         {
           edges.map(({ node }) => {
             const { title } = node.frontmatter
             const { slug } = node.fields
             return (
-              <div className="card__container " key={node.fields.slug}>
+              <div className="card__container grid-12 grid-md-3" key={node.fields.slug}>
                 <div className="card content__actual">
                   <div className="card__inner">
                     <h3 className="card__title">
